@@ -1,8 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans';
+    font-style: normal;
     padding: 10px;
     background-color: #f4f4f4;
     overflow-x: auto;
+    src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
 /* Estilo para o cabeçalho fixo */
@@ -13,7 +15,7 @@ body {
     right: 0;
     bottom: 30px;
     z-index: 1;
-    background-color: #068d35;
+    background-color: #7510E1;
     color: #3a0303;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -32,7 +34,7 @@ body {
 .accordion {
     width: 100%;
     margin: auto;
-    box-shadow: 0 2px 5px rgba(173, 27, 27, 0.2);
+    box-shadow: 0 2px 5px rgba(95, 28, 28, 0.2);
 }
 
 .destaque {
@@ -49,7 +51,7 @@ body {
 thead {
     padding: 25px;
     padding-bottom: 30px;
-    background-color: #03742a;
+    background-color: #7510E1a;
     color: #fff;
     border-right: 160px;
 
@@ -62,11 +64,11 @@ tbody tr:nth-child(odd) {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #cce9d9;
+    background-color: #E3CFF9;
 }
 
 .accordion-button {
-    background-color: #227429;
+    background-color: #fddd86;
     color: white;
     padding: 1px;
     width: 100%;
@@ -136,7 +138,7 @@ th, td {
 
 .secondary-table table {
     margin-top: 10px;
-    background-color: #c7b4b4;
+    background-color: #f9c60b;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     overflow-x: auto;
     display: block; /* Added for horizontal overflow handling */
