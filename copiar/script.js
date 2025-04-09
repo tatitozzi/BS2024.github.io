@@ -9,14 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         primaryRows.forEach((row, index) => {
             row.addEventListener('click', () => {
                 const secondaryTable = secondaryTables[index];
-                const iconCell = row.querySelector('.grupo');
-                if (secondaryTable.style.display === 'none') {
-                    secondaryTable.style.display = 'block';
-                    iconCell.innerHTML = iconCell.innerHTML.replace('+', '–');
-                } else {
-                    secondaryTable.style.display = 'none';
-                    iconCell.innerHTML = iconCell.innerHTML.replace('–', '+');
-                }
+                secondaryTable.style.display = secondaryTable.style.display === 'none' ? 'block' : 'none';
             });
         });
     }
