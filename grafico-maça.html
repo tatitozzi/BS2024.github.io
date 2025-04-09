@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfico de Grafos - Epagri</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+</head>
+<body>
+    <h2 style="text-align: center; color: #ab71ec;">Benefício atribuído à Epagri e Adoção - Gráfico de Grafos</h2>
+    <div id="grafico-grafo" style="height: 600px;"></div>
+
+    <script>
+        Highcharts.chart('grafico-grafo', {
+            chart: {
+                type: 'networkgraph'
+            },
+            title: {
+                text: ''
+            },
+            plotOptions: {
+                networkgraph: {
+                    keys: ['from', 'to'],
+                    layoutAlgorithm: {
+                        enableSimulation: true,
+                        gravitationalConstant: 0.04
+                    }
+                }
+            },
+            tooltip: {
+                pointFormat: '<b>{point.name}</b><br/>Adoção: {point.adocao} ha<br/>Benefício: R$ {point.beneficio}'
+            },
+            series: [{
+                dataLabels: {
+                    enabled: true,
+                    linkFormat: '',
+                    allowOverlap: true
+                },
+                nodes: [
+                    { id: '2017', marker: { radius: 10 }, adocao: 3144, beneficio: '3.760.224,00', color: '#ab71ec' },
+                    { id: '2018', marker: { radius: 10 }, adocao: 3144, beneficio: '4.866.912,00', color: '#ab71ec' },
+                    { id: '2019', marker: { radius: 9 }, adocao: 2188, beneficio: '5.305.409,59', color: '#ab71ec' },
+                    { id: '2020', marker: { radius: 9 }, adocao: 2429, beneficio: '9.747.860,60', color: '#ab71ec' },
+                    { id: '2021', marker: { radius: 9 }, adocao: 2763, beneficio: '13.403.844,14', color: '#ab71ec' },
+                    { id: '2022', marker: { radius: 10 }, adocao: 3166, beneficio: '20.673.352,92', color: '#ab71ec' },
+                    { id: '2023', marker: { radius: 11 }, adocao: 3574, beneficio: '53.245.982,18', color: '#ab71ec' },
+                    { id: '2024', marker: { radius: 11 }, adocao: 3394, beneficio: '40.701.765,04', color: '#ab71ec' }
+                ],
+                data: [
+                    ['2017', '2018'],
+                    ['2018', '2019'],
+                    ['2019', '2020'],
+                    ['2020', '2021'],
+                    ['2021', '2022'],
+                    ['2022', '2023'],
+                    ['2023', '2024']
+                ]
+            }]
+        });
+    </script>
+</body>
+</html>
