@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico de Barras - Agroalertas</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+  <div id="grafico-tecnologias" style="width:100%; height:600px;"></div>
+
+  <script>
+    Highcharts.chart('grafico-tecnologias', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Benefício da Tecnologia "Agroalertas" na Cultura da Maçã (2017–2024)'
+      },
+      xAxis: {
+        categories: ['Agroalertas - Sistema de alerta fitossanitário para o controle de doenças na cultura da maçã'],
+        title: {
+          text: 'Tecnologia/Ação'
+        },
+        labels: {
+          style: {
+            fontSize: '11px'
+          }
+        }
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Benefício (R$)'
+        },
+        labels: {
+          formatter: function () {
+            return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.');
+          }
+        }
+      },
+      tooltip: {
+        shared: true,
+        valuePrefix: 'R$ ',
+        valueDecimals: 2,
+        valueSuffix: ''
+      },
+      plotOptions: {
+        column: {
+          dataLabels: {
+            enabled: true,
+            formatter: function () {
+              return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.');
+            }
+          }
+        }
+      },
+      series: [
+        {
+          name: '2017',
+          color: '#D32F2F',
+          data: [27075000]
+        },
+        {
+          name: '2018',
+          color: '#C62828',
+          data: [31587500]
+        },
+        {
+          name: '2019',
+          color: '#B71C1C',
+          data: [32015000]
+        },
+        {
+          name: '2020',
+          color: '#E53935',
+          data: [62510000]
+        },
+        {
+          name: '2021',
+          color: '#F44336',
+          data: [53200000]
+        },
+        {
+          name: '2022',
+          color: '#EF5350',
+          data: [91437500]
+        },
+        {
+          name: '2023',
+          color: '#FF5252',
+          data: [104737500]
+        },
+        {
+          name: '2024',
+          color: '#FAC60B',
+          data: [128012500]
+        }
+      ]
+    });
+  </script>
+</body>
+</html>
