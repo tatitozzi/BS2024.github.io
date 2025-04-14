@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfico de Projetos - Highcharts</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+<div id="grafico-projetos" style="width:100%; height:600px;"></div>
+<script>
+Highcharts.chart('grafico-projetos', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Evolução dos Projetos por Ano'
+    },
+    xAxis: {
+        categories: [
+            'Adequação da adubação - cebola',
+            'Agroalertas - maçã',
+            'Riscos climáticos',
+            'PNAE',
+            'Espumante rosé',
+            'Conservação maçã Fuji',
+            'Densidade da cebola',
+            'Conservação frutas (maçã, ameixa, kiwi)',
+            'Conservação caqui',
+            'Controle crescimento da macieira'
+        ],
+        title: {
+            text: 'Projetos'
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Valor (R$)'
+        },
+        labels: {
+            formatter: function () {
+                return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.');
+            }
+        }
+    },
+    tooltip: {
+        shared: true,
+        headerFormat: '<b>{point.key}</b><br/>',
+        pointFormat: '<span style="color:{series.color}">●</span> {series.name}: <b>R$ {point.y:,.2f}</b><br/>'
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0,
+            groupPadding: 0.1
+        }
+    },
+    series: [
+        { name: '2017', data: [8692700, 27075000, 0, 0, 0, 0, 20106300, 25134900, 1675800, 15697500] },
+        { name: '2018', data: [10414519.5, 31587500, 40334548.93, 0, 0, 0, 21399750, 36030633.1, 2053800, 19600450] },
+        { name: '2019', data: [14618780, 32015000, 79827390.46, 0, 0, 0, 58018200, 35951300, 1929900, 22207500] },
+        { name: '2020', data: [3386635, 62510000, 78003992.02, 0, 1100000, 0, 78443700, 35926800, 1259300, 13387500] },
+        { name: '2021', data: [22672620, 53200000, 87549584.08, 3889705.81, 1120000, 0, 107153250, 35111000, 1009400, 12792500] },
+        { name: '2022', data: [34586622, 91437500, 92608436.23, 5385622.56, 1177000, 0, 63017250, 43248022.44, 1259300, 21315000] },
+        { name: '2023', data: [40894802.36, 104737500, 84116124.42, 3949859.7, 1289000, 124149172, 61385550, 57102941.93, 2723000, 22099000] },
+        { name: '2024', data: [34725092, 128012500, 46048384.32, 3118957.88, 1197000, 97033762, 23802525, 57444759.87, 2852500, 32356506] }
+    ]
+});
+</script>
+</body>
+</html>
