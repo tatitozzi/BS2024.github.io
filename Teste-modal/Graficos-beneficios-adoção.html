@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indicadores Epagri</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .grafico {
+            flex: 1;
+            min-width: 450px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h2>Indicadores atribuídos à Epagri (2017 a 2024)</h2> -->
+    <div id="container">
+        <!-- <div id="grafico-beneficio" class="grafico"></div> -->
+        <div id="grafico-adocao" class="grafico"></div>
+    </div>
+
+    <script>
+        // Highcharts.chart('grafico-beneficio', {
+            // chart: { type: 'column' },
+            // title: { text: 'Benefício atribuído à Epagri (R$)' },
+            // xAxis: {
+                // categories: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                // crosshair: true
+            // },
+            // yAxis: {
+                // min: 0,
+                // title: { text: 'Valor (R$)' },
+                // labels: {
+                    // formatter: function () {
+                        // return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.');
+                    // }
+                // }
+            // },
+            // tooltip: {
+                // shared: true,
+                // useHTML: true,
+                // formatter: function () {
+                    // return `<b>${this.x}</b><br>${this.points.map(p => 
+                        // `${p.series.name}: <b>R$ ${Highcharts.numberFormat(p.y, 2, ',', '.')}</b><br>`
+                    // ).join('')}`;
+                // }
+            // },
+            // plotOptions: { 
+                // column: { 
+                    // borderWidth: 0,
+                    // color: '#fdd156'
+                // }
+            // },
+            // series: [{
+                // name: 'Benefício',
+                // data: [
+                    // 3760224.00, 4866912.00, 5305409.59, 9747860.60,
+                    // 13403844.14, 20673352.92, 53245982.18, 40701765.04
+                // ],
+                // color: '#fdd156'
+            // }]
+        // });
+
+        Highcharts.chart('grafico-adocao', {
+            chart: { type: 'line' },
+            title: { text: 'Adoção da tecnologia (ha)' },
+            xAxis: {
+                categories: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: { text: 'Área (ha)' }
+            },
+            tooltip: {
+                shared: true,
+                valueSuffix: ' ha'
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: { enabled: true },
+                    enableMouseTracking: true
+                },
+                series: {
+                    color: '#fdd156'
+                }
+            },
+            series: [{
+                name: 'Adoção',
+                data: [19000, 19000, 19000, 19000, 19000, 19000, 19000, 19000]
+            }]
+        });
+    </script>
+</body>
+</html>

@@ -256,7 +256,7 @@ th, td {
   padding: 0;
   border: 1px solid #888;
   width: 80%;
-  max-width: 800px;
+  max-width: 1000px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   animation: fadeIn 0.3s ease;
