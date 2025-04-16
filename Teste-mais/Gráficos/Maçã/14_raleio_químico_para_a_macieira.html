@@ -1,29 +1,24 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
-  <title>Gráfico de Barras - Agroalertas</title>
+  <title>Gráfico de Barras - Maçã</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
-
 <body>
   <div id="grafico-tecnologias" style="width:100%; height:380px;"></div>
-
   <script>
     Highcharts.chart('grafico-tecnologias', {
       chart: {
         type: 'column'
       },
       title: {
-        text: 'Benefício da Tecnologia "Agroalertas" na Cultura da Maçã (2017–2024)'
+        text: 'Benefício da Tecnologia "Raleio químico para a macieira" na Categoria Maçã (2017–2024)'
       },
       xAxis: {
-        categories: ['Benefício da Tecnologia '],
-        
-        
-        
+        categories: ['Raleio químico para a macieira'],
         labels: {
           style: {
             fontSize: '11px'
@@ -44,8 +39,7 @@
       tooltip: {
         shared: true,
         valuePrefix: 'R$ ',
-        valueDecimals: 2,
-        valueSuffix: ''
+        valueDecimals: 2
       },
       plotOptions: {
         column: {
@@ -61,46 +55,45 @@
         {
           name: '2017',
           color: '#f6ffc1',
-          data: [27075000]
+          data: [7722000]
         },
         {
           name: '2018',
           color: '#FFECA8',
-          data: [31587500]
+          data: [6742500]
         },
         {
           name: '2019',
           color: '#FFE073',
-          data: [32015000]
+          data: [6242500]
         },
         {
           name: '2020',
           color: '#FFD447',
-          data: [62510000]
+          data: [7371000]
         },
         {
           name: '2021',
           color: '#FDCB26',
-          data: [53200000]
+          data: [7280000]
         },
         {
           name: '2022',
           color: '#FCC417',
-          data: [91437500]
+          data: [7280000]
         },
         {
           name: '2023',
           color: '#FBC10D',
-          data: [104737500]
+          data: [8137500]
         },
         {
           name: '2024',
           color: '#FAC60C',
-          data: [128012500]
+          data: [19630000]
         }
       ]
     });
   </script>
 </body>
-
 </html>
