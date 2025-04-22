@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico de Barras - Banana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+  <div id="grafico-tecnologias" style="width:100%; height:380px;"></div>
+  <script>
+    Highcharts.chart('grafico-tecnologias', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Benefício da Tecnologia "Cultivar de banana SCS451 Catarina" na Categoria Banana (2017–2024)'
+      },
+      xAxis: {
+        categories: ['Cultivar de banana SCS451 Catarina'],
+        labels: {
+          style: {
+            fontSize: '11px'
+          }
+        }
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Mil (R$)'
+        },
+        labels: {
+          formatter: function () {
+            return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.');
+          }
+        }
+      },
+      tooltip: {
+        shared: true,
+        valuePrefix: 'R$ ',
+        valueDecimals: 2
+      },
+      plotOptions: {
+        column: {
+          dataLabels: {
+            enabled: true,
+            formatter: function () {
+              return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.');
+            }
+          }
+        }
+      },
+      series: [
+        {
+          name: '2017',
+          color: '#f6ffc1',
+          data: [16193452]
+        },
+        {
+          name: '2018',
+          color: '#FFECA8',
+          data: [22649400]
+        },
+        {
+          name: '2019',
+          color: '#FFE073',
+          data: [9368560]
+        },
+        {
+          name: '2021',
+          color: '#FDCB26',
+          data: [10247444]
+        },
+        {
+          name: '2022',
+          color: '#FCC417',
+          data: [27396951]
+        },
+        {
+          name: '2023',
+          color: '#FBC10D',
+          data: [66665570]
+        },
+        {
+          name: '2024',
+          color: '#FAC60C',
+          data: [61762855]
+        }
+      ]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+     title: { text: 'Controle da maturação e conservação do caqui' },
+     subtitle: { text: 'Tecnologias Pós-Colheita de Frutas' },
+     xAxis: { categories: ['Caqui'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+   { name: '2017', color: '#f6ffc1', data: [1675800.00] },
+   { name: '2018', color: '#FFECA8', data: [2053800.00] },
+   { name: '2019', color: '#FFE073', data: [1929900.00] },
+   { name: '2020', color: '#FFD447', data: [1259300.00] },
+   { name: '2021', color: '#FDCB26', data: [1009400.00] },
+   { name: '2022', color: '#FCC417', data: [1259300.00] },
+   { name: '2023', color: '#FBC10D', data: [2723000.00] },
+   { name: '2024', color: '#FAC60C', data: [2852500.00] }
+  ] 
+});
+</script></body></html>

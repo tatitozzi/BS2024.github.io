@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Cultivar de Alface SCS374 Litorânea</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+  title: { text: 'Cultivar de Alface SCS374 Litorânea' },
+  subtitle: { text: 'Tecnologias para olericultura' },
+  xAxis: { categories: ['Cultivar de Alface SCS374 Litorânea'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2022', color: '#FCC417', data: [2323412.70] },
+    { name: '2023', color: '#FBC10D', data: [6403238.45] },
+    { name: '2024', color: '#FAC60C', data: [9415058.40] }
+  ]
+});
+</script></body></html>

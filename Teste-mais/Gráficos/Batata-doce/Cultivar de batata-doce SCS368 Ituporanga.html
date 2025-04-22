@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+    title: { text: 'Cultivar de batata-doce SCS368 Ituporanga' },
+    subtitle: { text: 'Batata-doce' },
+    xAxis: { categories: ['SCS368 Ituporanga'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+     { name: '2017', color: '#f6ffc1', data: [119639.63] },
+     { name: '2018', color: '#FFECA8', data: [108047.94] },
+     { name: '2019', color: '#FFE073', data: [90518.35] },
+     { name: '2020', color: '#FFD447', data: [95580.64] },
+     { name: '2021', color: '#FDCB26', data: [112405.38] },
+     { name: '2022', color: '#FCC417', data: [186592.68] },
+     { name: '2023', color: '#FBC10D', data: [263203.50] },
+    { name: '2024', color: '#FAC60C', data: [199148.54] }
+    ]
+});
+</script></body></html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+     title: { text: 'Produção de mudas de maracujazeiro-azedo em ambiente protegido' },
+     subtitle: { text: 'Tecnologias para fruticultura' },
+     xAxis: { categories: ['Mudas de maracujazeiro-azedo'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+    { name: '2018', color: '#FFECA8', data: [1162500.00] },
+    { name: '2019', color: '#FFE073', data: [2507500.00] },
+    { name: '2020', color: '#FFD447', data: [150000.00] },
+    { name: '2021', color: '#FDCB26', data: [3910193.85] },
+    { name: '2022', color: '#FCC417', data: [3823740.00] },
+    { name: '2023', color: '#FBC10D', data: [4414400.00] },
+    { name: '2024', color: '#FAC60C', data: [6370000.00] }
+  ] 
+});
+</script></body></html>

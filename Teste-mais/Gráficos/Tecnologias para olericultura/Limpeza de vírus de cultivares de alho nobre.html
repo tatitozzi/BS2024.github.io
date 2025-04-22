@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Limpeza de vírus de cultivares de alho nobre</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+  title: { text: 'Limpeza de vírus de cultivares de alho nobre' },
+  subtitle: { text: 'Tecnologias para olericultura' },
+  xAxis: { categories: ['Limpeza de vírus de cultivares de alho nobre'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2024', color: '#FAC60C', data: [56664972.00] }
+  ]
+});
+</script></body></html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Adequação do manejo da adubação com micronutrientes na cultura da cebola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+  <div id="grafico-tecnologia" style="width:100%; height:400px;"></div>
+  <script>
+    Highcharts.chart('grafico-tecnologia', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Adequação do manejo da adubação com micronutrientes na cultura da cebola'
+      },
+      subtitle: {
+        text: 'Cebola'
+      },
+      xAxis: {
+        categories: ['Adequação do manejo da adubação com micronutrientes na cultura da cebola'],
+        labels: {
+          style: {
+            fontSize: '11px'
+          }
+        }
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Mil (R$)'
+        },
+        labels: {
+          formatter: function () {
+            return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.');
+          }
+        }
+      },
+      tooltip: {
+        shared: true,
+        valuePrefix: 'R$ ',
+        valueDecimals: 2
+      },
+      plotOptions: {
+        column: {
+          dataLabels: {
+            enabled: true,
+            formatter: function () {
+              return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.');
+            }
+          }
+        }
+      },
+      series: [
+        {
+          name: '2017',
+          color: '#f6ffc1',
+          data: [8692700.00]
+        },
+        {
+          name: '2018',
+          color: '#FFECA8',
+          data: [10414519.50]
+        },
+        {
+          name: '2019',
+          color: '#FFE073',
+          data: [14618780.00]
+        },
+        {
+          name: '2020',
+          color: '#FFD447',
+          data: [3386635.00]
+        },
+        {
+          name: '2021',
+          color: '#FDCB26',
+          data: [22672620.00]
+        },
+        {
+          name: '2022',
+          color: '#FCC417',
+          data: [34586622.00]
+        },
+        {
+          name: '2023',
+          color: '#FBC10D',
+          data: [40894802.36]
+        },
+        {
+          name: '2024',
+          color: '#FAC60C',
+          data: [34725092.00]
+        }
+      ]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico de Barras - Maçã</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<body>
+  <div id="grafico-tecnologias" style="width:100%; height:380px;"></div>
+  <script>
+    Highcharts.chart('grafico-tecnologias', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Benefício da Tecnologia "Aumento da conservação da maçã Fuji após a colheita com baixo teor de CO2" na Categoria Maçã (2017–2024)'
+      },
+      xAxis: {
+        categories: ['Aumento da conservação da maçã Fuji após a colheita com baixo teor de CO2'],
+        labels: {
+          style: {
+            fontSize: '11px'
+          }
+        }
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Mil (R$)'
+        },
+        labels: {
+          formatter: function () {
+            return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.');
+          }
+        }
+      },
+      tooltip: {
+        shared: true,
+        valuePrefix: 'R$ ',
+        valueDecimals: 2
+      },
+      plotOptions: {
+        column: {
+          dataLabels: {
+            enabled: true,
+            formatter: function () {
+              return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.');
+            }
+          }
+        }
+      },
+      series: [
+        {
+          name: '2023',
+          color: '#FBC10D',
+          data: [124149172]
+        },
+        {
+          name: '2024',
+          color: '#FAC60C',
+          data: [97033762]
+        }
+      ]
+    });
+  </script>
+</body>
+</html>

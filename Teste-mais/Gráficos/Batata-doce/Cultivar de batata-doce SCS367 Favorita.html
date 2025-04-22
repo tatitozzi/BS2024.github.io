@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+   title: { text: 'Cultivar de batata-doce SCS367 Favorita' },
+   subtitle: { text: 'Batata-doce' },
+   xAxis: { categories: ['SCS367 Favorita'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+    { name: '2017', color: '#f6ffc1', data: [54726.88] },
+    { name: '2018', color: '#FFECA8', data: [45838.52] },
+    { name: '2019', color: '#FFE073', data: [40245.40] },
+    { name: '2020', color: '#FFD447', data: [42422.96] },
+    { name: '2021', color: '#FDCB26', data: [50418.90] },
+    { name: '2022', color: '#FCC417', data: [90889.50] },
+    { name: '2023', color: '#FBC10D', data: [134735.13] },
+    { name: '2024', color: '#FAC60C', data: [101945.09] }
+  ] 
+});
+</script></body></html>

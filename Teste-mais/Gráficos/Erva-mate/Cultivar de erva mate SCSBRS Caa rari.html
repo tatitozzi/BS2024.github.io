@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+   title: { text: 'Cultivar de erva mate SCSBRS Caa rari' },
+   subtitle: { text: 'Erva-mate' },
+   xAxis: { categories: ['Cultivar de erva mate SCSBRS Caa rari'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+    { name: '2017', color: '#f6ffc1', data: [7600000.00] },
+    { name: '2018', color: '#FFECA8', data: [10692000.00] },
+    { name: '2019', color: '#FFE073', data: [10492000.00] },
+    { name: '2020', color: '#FFD447', data: [13104000.00] },
+    { name: '2021', color: '#FDCB26', data: [19200000.00] },
+    { name: '2022', color: '#FCC417', data: [23028000.00] },
+    { name: '2023', color: '#FBC10D', data: [20026000.00] },
+    { name: '2024', color: '#FAC60C', data: [16446400.00] }
+  ] 
+});
+</script></body></html>

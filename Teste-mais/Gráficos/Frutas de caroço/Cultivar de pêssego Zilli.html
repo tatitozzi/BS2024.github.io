@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+   title: { text: 'Cultivar de pêssego Zilli' },
+   subtitle: { text: 'Frutas de caroço' },
+   xAxis: { categories: ['Cultivar de pêssego Zilli'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+    { name: '2017', color: '#f6ffc1', data: [31161.90] },
+    { name: '2018', color: '#FFECA8', data: [31964.70] },
+    { name: '2019', color: '#FFE073', data: [124626.60] },
+    { name: '2020', color: '#FFD447', data: [237155.80] },
+    { name: '2022', color: '#FCC417', data: [165714.00] },
+    { name: '2023', color: '#FBC10D', data: [184803.50] },
+    { name: '2024', color: '#FAC60C', data: [213307.35] }
+  ] 
+});
+</script></body></html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+    title: { text: 'Cultivar de ameixa SCS438 Zafira' },
+    subtitle: { text: 'Frutas de caroço' },
+    xAxis: { categories: ['Cultivar de ameixa SCS438 Zafira'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+    { name: '2018', color: '#FFECA8', data: [7500.00] },
+    { name: '2019', color: '#FFE073', data: [10500.00] },
+    { name: '2020', color: '#FFD447', data: [13561.60] },
+    { name: '2021', color: '#FDCB26', data: [81728.75] },
+    { name: '2022', color: '#FCC417', data: [93988.02] },
+    { name: '2023', color: '#FBC10D', data: [103386.75] },
+    { name: '2024', color: '#FAC60C', data: [109166.00] }
+  ] 
+});
+</script></body></html>

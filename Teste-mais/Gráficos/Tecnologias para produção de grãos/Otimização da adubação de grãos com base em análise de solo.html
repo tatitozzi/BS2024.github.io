@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+   title: { text: 'Otimização da adubação de grãos com base em análise de solo' },
+   subtitle: { text: 'Tecnologias para produção de grãos' },
+   xAxis: { categories: ['Adubação com análise de solo'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+    { name: '2017', color: '#f6ffc1', data: [21552593.48] },
+    { name: '2018', color: '#FFECA8', data: [25806105.06] },
+    { name: '2019', color: '#FFE073', data: [15705038.34] },
+    { name: '2020', color: '#FFD447', data: [15511251.83] },
+    { name: '2021', color: '#FDCB26', data: [19519312.74] },
+    { name: '2023', color: '#FBC10D', data: [28029660.39] },
+    { name: '2024', color: '#FAC60C', data: [11471948.61] }
+  ] 
+});
+</script></body></html>

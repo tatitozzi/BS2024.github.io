@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+     title: { text: 'Utilização de cama de aviário como fertilizante' },
+     subtitle: { text: 'Tecnologias Ambientais' },
+     xAxis: { categories: ['Cama de aviário como fertilizante'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2017', color: '#f6ffc1', data: [5797500.00] },
+    { name: '2018', color: '#FFECA8', data: [6416300.00] },
+    { name: '2019', color: '#FFE073', data: [5928000.00] },
+    { name: '2020', color: '#FFD447', data: [6701176.00] },
+    { name: '2021', color: '#FDCB26', data: [11709000.00] },
+    { name: '2022', color: '#FCC417', data: [11140000.00] },
+    { name: '2023', color: '#FBC10D', data: [10731600.00] },
+    { name: '2024', color: '#FAC60C', data: [10699500.00] }
+  ] 
+});
+</script></body></html>

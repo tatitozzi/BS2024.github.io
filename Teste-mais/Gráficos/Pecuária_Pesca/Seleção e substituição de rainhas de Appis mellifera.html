@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+   title: { text: 'Seleção e substituição de rainhas de Appis mellifera visando resistência a pragas e doenças e alta produtividade de mel' },
+   subtitle: { text: 'Tecnologias para Pecuária/Pastagem' },
+   xAxis: { categories: ['Seleção e substituição de rainhas de Appis mellifera'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2017', color: '#f6ffc1', data: [133000.00] },
+    { name: '2018', color: '#FFECA8', data: [413000.00] },
+    { name: '2019', color: '#FFE073', data: [849500.00] },
+    { name: '2020', color: '#FFD447', data: [1424808.00] },
+    { name: '2021', color: '#FDCB26', data: [1453200.00] },
+    { name: '2022', color: '#FCC417', data: [979440.00] },
+    { name: '2023', color: '#FBC10D', data: [1335152.00] },
+    { name: '2024', color: '#FAC60C', data: [1287743.10] }
+  ]
+});
+</script></body></html>

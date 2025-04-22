@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+    title: { text: 'Cultivar de uva branca Vermentino' },
+    subtitle: { text: 'Uva' },
+    xAxis: { categories: ['Uva branca Vermentino'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+   { name: '2017', color: '#f6ffc1', data: [18544.40] },
+   { name: '2018', color: '#FFECA8', data: [16859.52] },
+   { name: '2019', color: '#FFE073', data: [17295.04] },
+   { name: '2020', color: '#FFD447', data: [49119.18] },
+   { name: '2021', color: '#FDCB26', data: [38587.43] },
+   { name: '2022', color: '#FCC417', data: [59004.40] },
+   { name: '2023', color: '#FBC10D', data: [59004.40] },
+   { name: '2024', color: '#FAC60C', data: [96869.26] }
+  ] 
+});
+</script></body></html>

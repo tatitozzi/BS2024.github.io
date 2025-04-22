@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+  title: { text: 'Cultivares de mandioca de mesa (aipim)' },
+  subtitle: { text: 'Mandioca' },
+  xAxis: { categories: ['Mandioca de mesa (aipim)'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [ 
+    { name: '2017', color: '#f6ffc1', data: [333060.00] },
+    { name: '2018', color: '#FFECA8', data: [602910.00] },
+    { name: '2019', color: '#FFE073', data: [475020.00] },
+    { name: '2020', color: '#FFD447', data: [795438.00] },
+    { name: '2021', color: '#FDCB26', data: [980826.00] },
+    { name: '2022', color: '#FCC417', data: [3417120.00] },
+    { name: '2023', color: '#FBC10D', data: [4623640.00] },
+    { name: '2024', color: '#FAC60C', data: [4953900.00] }
+  ] 
+});
+</script></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Racionalização do uso de mão de obra em horticultura com aplicação de composto em dose única</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+  title: { text: 'Racionalização do uso de mão de obra em horticultura com aplicação de composto em dose única' },
+  subtitle: { text: 'Tecnologias para olericultura' },
+  xAxis: { categories: ['Racionalização do uso de mão de obra em horticultura'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2017', color: '#f6ffc1', data: [340956.00] },
+    { name: '2018', color: '#FFECA8', data: [342120.00] },
+    { name: '2019', color: '#FFE073', data: [382125.00] },
+    { name: '2020', color: '#FFD447', data: [410340.80] },
+    { name: '2021', color: '#FDCB26', data: [480493.20] },
+    { name: '2022', color: '#FCC417', data: [554479.20] },
+    { name: '2023', color: '#FBC10D', data: [628555.20] },
+    { name: '2024', color: '#FAC60C', data: [676774.00] }
+  ]
+});
+</script></body></html>

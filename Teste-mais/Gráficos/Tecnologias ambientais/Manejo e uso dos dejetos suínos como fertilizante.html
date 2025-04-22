@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Manejo e uso dos dejetos suínos como fertilizante</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+  title: { text: 'Manejo e uso dos dejetos suínos como fertilizante' },
+  subtitle: { text: 'Tecnologias para olericultura' },
+  xAxis: { categories: ['Manejo e uso dos dejetos suínos como fertilizante'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2017', color: '#f6ffc1', data: [5342400.00] },
+    { name: '2018', color: '#FFECA8', data: [8054200.00] },
+    { name: '2019', color: '#FFE073', data: [6804000.00] },
+    { name: '2020', color: '#FFD447', data: [7576800.00] },
+    { name: '2021', color: '#FDCB26', data: [23623600.00] },
+    { name: '2022', color: '#FCC417', data: [11608800.00] },
+    { name: '2023', color: '#FBC10D', data: [16254000.00] },
+    { name: '2024', color: '#FAC60C', data: [11319000.00] }
+  ]
+});
+</script></body></html>

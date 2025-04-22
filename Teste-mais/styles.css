@@ -68,7 +68,7 @@ tbody tr:nth-child(even) {
     background-color: #ffe7af;
 }
 
-.linha_alternada{
+.linha_alternada {
     background-color: #ffe7af;
 }
 
@@ -135,6 +135,8 @@ th, td {
     width: 30%;    
     padding-right: 50px;
 }
+
+
 
 
 .accordion-title {

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+   title: { text: 'Impacto das Ações de ATER da Epagri na mitigação da emissão de gases de efeito estufa' },
+   subtitle: { text: 'Tecnologias Ambientais' },
+   xAxis: { categories: ['Impacto das Ações de ATER da Epagri'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2022', color: '#FCC417', data: [193366583.70] },
+    { name: '2023', color: '#FBC10D', data: [89380029.00] },
+    { name: '2024', color: '#FAC60C', data: [73556842.05] }
+  ] 
+});
+</script></body></html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>gRÁFICO</title><script src="https://code.highcharts.com/highcharts.js"></script></head>
+<body><div id="grafico" style="height:380px"></div>
+<script>
+Highcharts.chart('grafico', {
+  chart: { type: 'column' },
+    title: { text: 'Sistema de filtragem rápida para uso em cisternas na avicultura de corte' },
+    subtitle: { text: 'Tecnologias Ambientais' },
+    xAxis: { categories: ['Sistema de filtragem rápida'] },
+  yAxis: { title: { text: 'Mil (R$)' }, labels: {
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.value, 0, ',', '.'); }
+  }},
+  tooltip: { shared: true, valuePrefix: 'R$ ', valueDecimals: 2 },
+  plotOptions: { column: { dataLabels: {
+      enabled: true,
+      formatter: function () { return 'R$ ' + Highcharts.numberFormat(this.y, 0, ',', '.'); }
+  }}},
+  series: [
+    { name: '2018', color: '#FFECA8', data: [1196088.00] },
+    { name: '2019', color: '#FFE073', data: [12850934.10] },
+    { name: '2020', color: '#FFD447', data: [15164059.50] },
+    { name: '2021', color: '#FDCB26', data: [16317197.96] },
+    { name: '2022', color: '#FCC417', data: [15734797.00] },
+    { name: '2023', color: '#FBC10D', data: [16775698.76] }
+  ] 
+});
+</script></body></html>
